@@ -65,7 +65,7 @@ public class DragScript : MonoBehaviour, IPointerDownHandler, IBeginDragHandler,
             if(objectScript.rightPlace == false)
             {
                 canvasGroup.blocksRaycasts = true;
-                objectScript.audioSource.PlayOneShot(objectScript.audioClips[1]);
+                objectScript.audioSource.PlayOneShot(objectScript.audioClips[0]);
             
             }
             else

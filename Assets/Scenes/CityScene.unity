@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 22394076}
   - component: {fileID: 22394078}
   - component: {fileID: 22394077}
+  - component: {fileID: 22394079}
   m_Layer: 5
   m_Name: GarbageTruckPlace
   m_TagString: Garbage
@@ -198,6 +199,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 22394075}
   m_CullTransparentMesh: 1
+--- !u!114 &22394079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 22394075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03cc856d0f46780478b6f1f0aa62f2dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectScript: {fileID: 446570820}
 --- !u!1 &446570819
 GameObject:
   m_ObjectHideFlags: 0
@@ -208,6 +222,7 @@ GameObject:
   m_Component:
   - component: {fileID: 446570821}
   - component: {fileID: 446570820}
+  - component: {fileID: 446570822}
   m_Layer: 0
   m_Name: ScriptHolder
   m_TagString: Untagged
@@ -257,6 +272,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &446570822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 446570819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86fa13ca1441dfa45b885f1faaefc8c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectScript: {fileID: 446570820}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -268,6 +296,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -349,6 +378,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13640673242ed584d89c8df47f9658b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxZoom: 300
+  minZoom: 150
+  followSpeed: 5
+  cam: {fileID: 0}
 --- !u!1 &523078104
 GameObject:
   m_ObjectHideFlags: 0
@@ -797,6 +842,7 @@ GameObject:
   - component: {fileID: 1165902421}
   - component: {fileID: 1165902423}
   - component: {fileID: 1165902422}
+  - component: {fileID: 1165902424}
   m_Layer: 5
   m_Name: MedicPlace
   m_TagString: Medic
@@ -861,6 +907,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1165902420}
   m_CullTransparentMesh: 1
+--- !u!114 &1165902424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1165902420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03cc856d0f46780478b6f1f0aa62f2dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectScript: {fileID: 446570820}
 --- !u!1 &1279820172
 GameObject:
   m_ObjectHideFlags: 0
@@ -1015,9 +1074,10 @@ GameObject:
   - component: {fileID: 2046085301}
   - component: {fileID: 2046085303}
   - component: {fileID: 2046085302}
+  - component: {fileID: 2046085304}
   m_Layer: 5
   m_Name: SchoolBussPlace
-  m_TagString: Garbage
+  m_TagString: School
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1079,6 +1139,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2046085300}
   m_CullTransparentMesh: 1
+--- !u!114 &2046085304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046085300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03cc856d0f46780478b6f1f0aa62f2dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectScript: {fileID: 446570820}
 --- !u!1 &2103107096
 GameObject:
   m_ObjectHideFlags: 0
@@ -1275,8 +1348,8 @@ Canvas:
   m_GameObject: {fileID: 2110749385}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 519420031}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
