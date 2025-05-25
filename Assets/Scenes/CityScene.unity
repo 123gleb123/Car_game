@@ -423,9 +423,27 @@ MonoBehaviour:
   garbageTruck: {fileID: 921599512}
   schoolBuss: {fileID: 726295147}
   medic: {fileID: 928083195}
+  ekskavator: {fileID: 1496871742}
+  e46: {fileID: 983161857}
+  b2: {fileID: 1985510834}
+  e61: {fileID: 1096069770}
+  police: {fileID: 773976193}
+  traktors1: {fileID: 999982594}
+  traktos5: {fileID: 1168551440}
+  cementaMasina: {fileID: 918773475}
+  ugunsdzeSeji: {fileID: 1326590113}
   gTruckPos: {x: 0, y: 0}
   sBussPos: {x: 0, y: 0}
   medicPos: {x: 0, y: 0}
+  ekskavatorPos: {x: 0, y: 0}
+  e46Pos: {x: 0, y: 0}
+  b2Pos: {x: 0, y: 0}
+  e61Pos: {x: 0, y: 0}
+  policePos: {x: 0, y: 0}
+  traktors1Pos: {x: 0, y: 0}
+  traktos5Pos: {x: 0, y: 0}
+  cementaMasinaPos: {x: 0, y: 0}
+  ugunsdzeSejiPos: {x: 0, y: 0}
   audioSource: {fileID: 2103107097}
   audioClips:
   - {fileID: 8300000, guid: 45b46388252ff62448ad451517890a75, type: 3}
@@ -433,6 +451,14 @@ MonoBehaviour:
   - {fileID: 8300000, guid: bcdefe438be7e0f45b396dc0f5ebb3e9, type: 3}
   - {fileID: 8300000, guid: f4a064bc7790e604ab9df2b9e47edf5f, type: 3}
   - {fileID: 8300000, guid: ae0a38f239a6e4147841278529b41ab0, type: 3}
+  - {fileID: 8300000, guid: 03d3a9945594c5c43be2e95c9681ec22, type: 3}
+  - {fileID: 8300000, guid: 5da1898d2aa0c5f4bbe765b9b9596fb2, type: 3}
+  - {fileID: 8300000, guid: 8ae478a76716a4e4e925ded700cdd6d6, type: 3}
+  - {fileID: 8300000, guid: d0d5866ad55c7c5438507a2b7ff4bb71, type: 3}
+  - {fileID: 8300000, guid: b148199b8820c814e8de9e1e0b0f9cb5, type: 3}
+  - {fileID: 8300000, guid: 3be92b1e52a32624290ebbc705072a36, type: 3}
+  - {fileID: 8300000, guid: 23a117700955ca449890c98b55fb5c84, type: 3}
+  - {fileID: 8300000, guid: 353b735ce63aeb341b4b5a6f7dc4da15, type: 3}
   rightPlace: 0
   lastDragged: {fileID: 0}
 --- !u!4 &446570821
