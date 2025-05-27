@@ -17,3 +17,9 @@ jāveic pēc iespējas ātrāk.
 - [ ] Izstrādāt uzvaras logu un zvaigžņu sistēmu
 - [ ] Papildināt spēles loģiku
 - [ ] Izstrādāt otro līmeni
+
+![image](https://github.com/user-attachments/assets/bc182a77-12a1-42a4-898f-2fce92ec2f8e)
+
+![image](https://github.com/user-attachments/assets/777244ad-4765-4b3b-8867-d91b9cbe9875)
+
+![image](https://github.com/user-attachments/assets/180a1226-54f7-44f1-bc35-b1fe7d373df5)
