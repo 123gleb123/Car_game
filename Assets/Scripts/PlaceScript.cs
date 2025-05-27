@@ -10,20 +10,23 @@ public class PlaceScript : MonoBehaviour, IDropHandler
     private float xSizeDif, ySizeDif;
     public ObjectScript objectScript;
 
+
     public void OnDrop(PointerEventData eventData)
     {
         if ((eventData.pointerDrag != null) && Input.GetMouseButtonUp(0)
             && Input.GetMouseButton(2) == false)
         {
+
             if (eventData.pointerDrag.tag.Equals(tag))
             {
-                // Salīdzina rotāciju starp objektu un vietu
-                placeZRotation = eventData.pointerDrag.GetComponent<RectTransform>().transform.eulerAngles.z;
+                placeZRotation =
+                eventData.pointerDrag.GetComponent<RectTransform>().transform.eulerAngles.z;
+
                 carZRotation = GetComponent<RectTransform>().transform.eulerAngles.z;
+
                 difZRotation = Mathf.Abs(placeZRotation - carZRotation);
                 Debug.Log("Dif Z Rotation: " + difZRotation);
 
-                // Salīdzina izmēru starp objektu un vietu
                 placeSize = eventData.pointerDrag.GetComponent<RectTransform>().localScale;
                 carSize = GetComponent<RectTransform>().localScale;
                 xSizeDif = Mathf.Abs(placeSize.x - carSize.x);
@@ -36,29 +39,67 @@ public class PlaceScript : MonoBehaviour, IDropHandler
                     Debug.Log("Right Place");
                     objectScript.rightPlace = true;
 
-                    // Objektu novieto precīzā vietā
+                    // Iecentr? poz?ciju
                     eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition =
                         GetComponent<RectTransform>().anchoredPosition;
 
-                    // Uzliek rotāciju pēc vietas
+                    // Piel?go rot?ciju
                     eventData.pointerDrag.GetComponent<RectTransform>().localRotation =
                         GetComponent<RectTransform>().localRotation;
 
-                    // Uzliek izmēru pēc vietas
+                    // Piel?go izm?ru
                     eventData.pointerDrag.GetComponent<RectTransform>().localScale =
                         GetComponent<RectTransform>().localScale;
 
-                    // Atskaņo veiksmīgas novietošanas skaņu
                     objectScript.audioSource.PlayOneShot(objectScript.audioClips[0]);
+                    UzvarasLogs.instance.VehiclePlaced();
+                    
+                    switch (eventData.pointerDrag.tag)
+                    {
+                        case "Garbage":
+                            objectScript.audioSource.PlayOneShot(objectScript.audioClips[2]);
+                            break;
+                        case "School":
+                            objectScript.audioSource.PlayOneShot(objectScript.audioClips[3]);
+                            break;
+                        case "Medic":
+                            objectScript.audioSource.PlayOneShot(objectScript.audioClips[4]);
+                            break;
+                        case "CementaMasina":
+                            objectScript.audioSource.PlayOneShot(objectScript.audioClips[5]);
+                            break;
+                        case "Police":
+                            objectScript.audioSource.PlayOneShot(objectScript.audioClips[7]);
+                            break;
+                        case "e61":
+                            objectScript.audioSource.PlayOneShot(objectScript.audioClips[6]);
+                            break;
+                        case "b2":
+                            objectScript.audioSource.PlayOneShot(objectScript.audioClips[3]);
+                            break;
+                        case "Ekskavator":
+                            objectScript.audioSource.PlayOneShot(objectScript.audioClips[9]);
+                            break;
+                        case "Traktors1":
+                            objectScript.audioSource.PlayOneShot(objectScript.audioClips[8]);
+                            break;
+                        case "Traktos5":
+                            objectScript.audioSource.PlayOneShot(objectScript.audioClips[11]);
+                            break;
+                        case "UgunsdzeSeji":
+                            objectScript.audioSource.PlayOneShot(objectScript.audioClips[12]);
+                            break;
+                        case "e46":
+                            objectScript.audioSource.PlayOneShot(objectScript.audioClips[13]);
+                            break;
+                    }
                 }
             }
             else
             {
-                // Ja nepareizā vietā — atgriež atpakaļ un atskaņo kļūdas skaņu
                 objectScript.rightPlace = false;
                 objectScript.audioSource.PlayOneShot(objectScript.audioClips[1]);
 
-                // Atgriež objektu sākotnējā pozīcijā pēc tag
                 switch (eventData.pointerDrag.tag)
                 {
                     case "Garbage":

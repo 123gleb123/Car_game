@@ -17,6 +17,7 @@ public class ObjectScript : MonoBehaviour
     public GameObject cementaMasina;
     public GameObject ugunsdzeSeji;
 
+
     [HideInInspector] public Vector2 gTruckPos;
     [HideInInspector] public Vector2 sBussPos;
     [HideInInspector] public Vector2 medicPos;
