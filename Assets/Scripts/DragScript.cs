@@ -41,20 +41,19 @@ public class DragScript : MonoBehaviour, IPointerDownHandler, IBeginDragHandler,
     }
 
     public void OnDrag(PointerEventData eventData)
+{
+    Vector2 localPoint;
+
+    if (RectTransformUtility.ScreenPointToLocalPointInRectangle(
+        canva.transform as RectTransform,
+        Input.mousePosition,
+        canva.renderMode == RenderMode.ScreenSpaceOverlay ? null : canva.worldCamera,
+        out localPoint))
     {
-        Debug.Log("Dragging: " + gameObject.name);
-        Vector2 mousePosition =
-            new Vector2(Input.mousePosition.x, Input.mousePosition.y);
-        mousePosition.x = Mathf.Clamp(
-            mousePosition.x, 0 + rectTransform.rect.width / 2,
-            Screen.width - rectTransform.rect.width / 2);
-
-        mousePosition.y = Mathf.Clamp(
-            mousePosition.y, 0 + rectTransform.rect.height / 2,
-            Screen.height - rectTransform.rect.height / 2);
-
-        transform.position = mousePosition;
+        rectTransform.localPosition = localPoint;
     }
+}
+
 
     public void OnEndDrag(PointerEventData eventData)
     {

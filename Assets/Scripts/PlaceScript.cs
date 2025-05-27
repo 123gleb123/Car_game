@@ -13,45 +13,32 @@ public class PlaceScript : MonoBehaviour, IDropHandler
 
     public void OnDrop(PointerEventData eventData)
     {
-        if ((eventData.pointerDrag != null) && Input.GetMouseButtonUp(0)
-            && Input.GetMouseButton(2) == false)
+         if ((eventData.pointerDrag != null) && Input.GetMouseButtonUp(0)
+            && Input.GetMouseButton(2) == false) { }
+
+        if (eventData.pointerDrag.tag.Equals(tag))
         {
+            placeZRotation = eventData.pointerDrag.GetComponent<RectTransform>().transform.eulerAngles.z;
+            carZRotation = GetComponent<RectTransform>().transform.eulerAngles.z;
+            difZRotation = Mathf.Abs(placeZRotation - carZRotation);
 
-            if (eventData.pointerDrag.tag.Equals(tag))
+            placeSize = eventData.pointerDrag.GetComponent<RectTransform>().localScale;
+            carSize = GetComponent<RectTransform>().localScale;
+            xSizeDif = Mathf.Abs(placeSize.x - carSize.x);
+            ySizeDif = Mathf.Abs(placeSize.y - carSize.y);
+
+            if ((difZRotation <= 10 || (difZRotation >= 350 && difZRotation <= 360)) && (xSizeDif <= 0.3 && ySizeDif <= 0.3))
             {
-                placeZRotation =
-                eventData.pointerDrag.GetComponent<RectTransform>().transform.eulerAngles.z;
-
-                carZRotation = GetComponent<RectTransform>().transform.eulerAngles.z;
-
-                difZRotation = Mathf.Abs(placeZRotation - carZRotation);
-                Debug.Log("Dif Z Rotation: " + difZRotation);
-
-                placeSize = eventData.pointerDrag.GetComponent<RectTransform>().localScale;
-                carSize = GetComponent<RectTransform>().localScale;
-                xSizeDif = Mathf.Abs(placeSize.x - carSize.x);
-                ySizeDif = Mathf.Abs(placeSize.y - carSize.y);
-                Debug.Log("Dif X Size: " + xSizeDif + " Dif Y Size: " + ySizeDif);
-
-                if ((difZRotation <= 10 || (difZRotation >= 350 && difZRotation <= 360)) &&
-                    (xSizeDif <= 0.3 && ySizeDif <= 0.3))
-                {
                     Debug.Log("Right Place");
                     objectScript.rightPlace = true;
+                    //Izcentre poziciju
+                    eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+                    //Pielago rotaciju
+                    eventData.pointerDrag.GetComponent<RectTransform>().localRotation = GetComponent<RectTransform>().localRotation;
+                    //Pielago izmeru
+                    eventData.pointerDrag.GetComponent<RectTransform>().localScale = GetComponent<RectTransform>().localScale;
 
-                    // Iecentr? poz?ciju
-                    eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition =
-                        GetComponent<RectTransform>().anchoredPosition;
 
-                    // Piel?go rot?ciju
-                    eventData.pointerDrag.GetComponent<RectTransform>().localRotation =
-                        GetComponent<RectTransform>().localRotation;
-
-                    // Piel?go izm?ru
-                    eventData.pointerDrag.GetComponent<RectTransform>().localScale =
-                        GetComponent<RectTransform>().localScale;
-
-                    objectScript.audioSource.PlayOneShot(objectScript.audioClips[0]);
                     UzvarasLogs.instance.VehiclePlaced();
                     
                     switch (eventData.pointerDrag.tag)
@@ -144,5 +131,4 @@ public class PlaceScript : MonoBehaviour, IDropHandler
                 }
             }
         }
-    }
 }
