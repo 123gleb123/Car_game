@@ -1,9 +1,10 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ObjectScript : MonoBehaviour
 {
+    // Atsauces uz visiem transportlīdzekļu objektiem
     public GameObject garbageTruck;
     public GameObject schoolBuss;
     public GameObject medic;
@@ -17,7 +18,7 @@ public class ObjectScript : MonoBehaviour
     public GameObject cementaMasina;
     public GameObject ugunsdzeSeji;
 
-
+    // Sākotnējās pozīcijas (noteiktas Start laikā)
     [HideInInspector] public Vector2 gTruckPos;
     [HideInInspector] public Vector2 sBussPos;
     [HideInInspector] public Vector2 medicPos;
@@ -31,11 +32,15 @@ public class ObjectScript : MonoBehaviour
     [HideInInspector] public Vector2 cementaMasinaPos;
     [HideInInspector] public Vector2 ugunsdzeSejiPos;
 
+    // Audio
     public AudioSource audioSource;
-    public AudioClip[] audioClips;
-    [HideInInspector] public bool rightPlace = false;
-    public GameObject lastDragged = null;
+    public AudioClip[] audioClips; // Skaņas dažādiem objektiem
 
+    // Spēles loģikas kontrole
+    [HideInInspector] public bool rightPlace = false;
+    public GameObject lastDragged = null; // Saglabā pēdējo vilkto objektu
+
+    // Uzstāda katra objekta sākotnējo pozīciju
     void Start()
     {
         gTruckPos = garbageTruck.GetComponent<RectTransform>().localPosition;
