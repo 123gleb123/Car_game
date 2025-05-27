@@ -12,11 +12,11 @@ jāveic pēc iespējas ātrāk.
 - [x] Ieviest skaņas efektus un mūziku
 - [x] Izstrādāt Transformācijas skriptu (izmērs, rotācija)
 - [ ] Izstrādāt kameras skriptu (pietuvināt/attālināt)
-- [ ] Izstrādāt sākuma ainu
-- [ ] Ieviest taimeri
-- [ ] Izstrādāt uzvaras logu un zvaigžņu sistēmu
-- [ ] Papildināt spēles loģiku
-- [ ] Izstrādāt otro līmeni
+- [x] Izstrādāt sākuma ainu
+- [x] Ieviest taimeri
+- [x] Izstrādāt uzvaras logu un zvaigžņu sistēmu
+- [x] Papildināt spēles loģiku
+- [x] Izstrādāt otro līmeni
 
 ![image](https://github.com/user-attachments/assets/bc182a77-12a1-42a4-898f-2fce92ec2f8e)
 
